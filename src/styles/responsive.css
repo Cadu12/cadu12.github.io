@@ -1,0 +1,496 @@
+/**
+ * ESTILOS RESPONSIVOS
+ * Otimizações para diferentes tamanhos de tela
+ * Prioriza acessibilidade e usabilidade em dispositivos móveis
+ */
+
+/* ================================
+   MOBILE - Telas pequenas (até 480px)
+   ================================ */
+
+@media (max-width: 480px) {
+    :root {
+        --tamanho-fonte-base: 14px;
+        --tamanho-fonte-grande: 18px;
+        --tamanho-fonte-titulo: 24px;
+        --espacamento-xs: 0.375rem;
+        --espacamento-sm: 0.75rem;
+        --espacamento-md: 1rem;
+        --espacamento-lg: 1.5rem;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        line-height: 1.5;
+    }
+
+    .app {
+        min-height: 100vh;
+    }
+
+    .app-header {
+        padding: var(--espacamento-md);
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: var(--espacamento-md);
+        align-items: stretch;
+    }
+
+    .app-titulo {
+        font-size: 1.5rem;
+        margin-bottom: var(--espacamento-xs);
+    }
+
+    .app-subtitulo {
+        font-size: 0.875rem;
+    }
+
+    .app-main {
+        padding: var(--espacamento-md);
+    }
+
+    .app-container {
+        grid-template-columns: 1fr;
+        gap: var(--espacamento-md);
+    }
+
+    .form-container {
+        padding: var(--espacamento-md);
+    }
+
+    .task-list {
+        padding: var(--espacamento-md);
+    }
+
+    .task-form {
+        sticky: static;
+    }
+
+    .form-label {
+        font-size: var(--tamanho-fonte-base);
+    }
+
+    .form-input {
+        padding: var(--espacamento-xs) var(--espacamento-sm);
+        font-size: 16px;
+        /* Impede zoom em iOS */
+        min-height: 44px;
+    }
+
+    .form-textarea {
+        min-height: 80px;
+    }
+
+    .btn {
+        padding: var(--espacamento-sm);
+        font-size: var(--tamanho-fonte-base);
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .btn-acao {
+        min-height: 40px;
+        padding: var(--espacamento-xs) var(--espacamento-sm);
+    }
+
+    .btn-filtro {
+        flex: 1;
+        min-width: 80px;
+        font-size: var(--tamanho-fonte-pequeno);
+    }
+
+    .task-item {
+        flex-direction: column;
+        gap: var(--espacamento-sm);
+        padding: var(--espacamento-sm);
+    }
+
+    .task-status-indicador {
+        font-size: 1.5rem;
+    }
+
+    .task-titulo {
+        font-size: var(--tamanho-fonte-base);
+    }
+
+    .task-descricao {
+        font-size: 0.8125rem;
+    }
+
+    .task-data {
+        font-size: 0.8125rem;
+    }
+
+    .task-acoes {
+        width: 100%;
+        justify-content: stretch;
+        gap: var(--espacamento-xs);
+    }
+
+    .task-acoes .btn-acao {
+        flex: 1;
+        min-height: 40px;
+        font-size: 0.875rem;
+        padding: var(--espacamento-xs);
+    }
+
+    .task-filtros {
+        flex-direction: column;
+        gap: var(--espacamento-xs);
+    }
+
+    .task-filtros .btn-filtro {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .task-list-header {
+        margin-bottom: var(--espacamento-md);
+        padding-bottom: var(--espacamento-md);
+    }
+
+    .titulo-secao {
+        font-size: var(--tamanho-fonte-grande);
+    }
+
+    .resumo-tarefas {
+        font-size: 0.8125rem;
+    }
+
+    .vazio-icone {
+        font-size: 2rem;
+        margin-bottom: var(--espacamento-md);
+    }
+
+    .vazio-mensagem {
+        font-size: 0.9rem;
+    }
+
+    .modal-container {
+        padding: var(--espacamento-md);
+    }
+
+    .modal {
+        border-radius: var(--raio-grande);
+    }
+
+    .notificacao {
+        right: var(--espacamento-sm);
+        left: var(--espacamento-sm);
+        max-width: none;
+        font-size: var(--tamanho-fonte-base);
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .form-buttons {
+        gap: var(--espacamento-xs);
+    }
+
+    .modal-buttons {
+        gap: var(--espacamento-xs);
+    }
+}
+
+/* ================================
+   TABLET - Telas médias (481px até 768px)
+   ================================ */
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .app-container {
+        grid-template-columns: 1fr;
+        gap: var(--espacamento-lg);
+    }
+
+    .task-form {
+        sticky: static;
+    }
+
+    .task-item {
+        flex-direction: column;
+    }
+
+    .task-acoes {
+        justify-content: stretch;
+        width: 100%;
+    }
+
+    .task-filtros {
+        flex-wrap: wrap;
+    }
+
+    .task-filtros .btn-filtro {
+        flex: 1 1 auto;
+        min-width: 100px;
+    }
+}
+
+/* ================================
+   DESKTOP - Telas grandes (769px+)
+   ================================ */
+
+@media (min-width: 769px) {
+    .app-container {
+        grid-template-columns: 1fr 1.5fr;
+    }
+
+    .task-form {
+        position: sticky;
+        top: 100px;
+    }
+
+    .task-item {
+        flex-direction: row;
+    }
+
+    .task-filtros .btn-filtro {
+        flex: 0 1 auto;
+    }
+
+    .task-acoes {
+        flex-direction: row;
+    }
+}
+
+/* ================================
+   ACESSIBILIDADE - Preferência de Redução de Movimento
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ================================
+   CONTRASTE ALTO
+   ================================ */
+
+@media (prefers-contrast: more) {
+    :root {
+        --cor-borda: #000000;
+        --cor-texto-secundario: #333333;
+    }
+
+    .btn {
+        border: 2px solid currentColor;
+    }
+
+    .task-item {
+        border-left-width: 6px;
+    }
+
+    .form-input {
+        border-width: 3px;
+    }
+}
+
+/* ================================
+   ORIENTAÇÃO LANDSCAPE
+   ================================ */
+
+@media (orientation: landscape) and (max-height: 600px) {
+    .app-header {
+        padding: var(--espacamento-sm);
+    }
+
+    .app-main {
+        padding: var(--espacamento-sm);
+    }
+
+    .app-container {
+        gap: var(--espacamento-sm);
+    }
+
+    .header-conteudo {
+        flex: 1;
+    }
+
+    .app-titulo {
+        margin-bottom: 0;
+        font-size: 1.5rem;
+    }
+
+    .app-subtitulo {
+        display: none;
+    }
+
+    .form-container,
+    .task-list {
+        padding: var(--espacamento-sm);
+    }
+
+    .task-item {
+        padding: var(--espacamento-sm);
+    }
+
+    .notificacao {
+        top: var(--espacamento-sm);
+        right: var(--espacamento-sm);
+    }
+}
+
+/* ================================
+   IMPRESSÃO
+   ================================ */
+
+@media print {
+
+    .app-header,
+    .app-footer,
+    .task-form,
+    .task-filtros,
+    .btn,
+    .modal {
+        display: none;
+    }
+
+    .app-main {
+        padding: 0;
+    }
+
+    .app-container {
+        grid-template-columns: 1fr;
+        gap: 0;
+        max-width: none;
+    }
+
+    .task-list {
+        box-shadow: none;
+        padding: 0;
+        background: white;
+    }
+
+    .task-item {
+        page-break-inside: avoid;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+    }
+
+    .task-acoes {
+        display: none;
+    }
+
+    h1,
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+
+/* ================================
+   TIPOGRAFIA RESPONSIVA
+   ================================ */
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1,
+    .app-titulo {
+        font-size: clamp(1.25rem, 6vw, 1.75rem);
+    }
+
+    h2,
+    .titulo-secao {
+        font-size: clamp(1.1rem, 5vw, 1.5rem);
+    }
+
+    h3 {
+        font-size: clamp(1rem, 4vw, 1.25rem);
+    }
+
+    .task-titulo {
+        font-size: clamp(0.875rem, 3vw, 1rem);
+    }
+}
+
+/* ================================
+   ESPAÇAMENTO RESPONSIVO
+   ================================ */
+
+@media (max-width: 768px) {
+    .app-main {
+        padding: clamp(0.75rem, 4vw, 1.5rem);
+    }
+
+    .task-item {
+        padding: clamp(0.75rem, 3vw, 1.5rem);
+    }
+
+    .form-container,
+    .task-list {
+        padding: clamp(0.75rem, 4vw, 1.5rem);
+    }
+}
+
+/* ================================
+   ELEMENTOS INTERATIVOS RESPONSIVOS
+   ================================ */
+
+@media (hover: hover) {
+
+    /* Hover disponível - estilos hover normais */
+    .btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+    }
+
+    .task-item:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@media (hover: none) {
+
+    /* Sem hover - dispositivos touch */
+    .btn:active:not(:disabled) {
+        opacity: 0.8;
+    }
+
+    .task-item:active {
+        box-shadow: var(--sombra-forte);
+    }
+}
+
+/* ================================
+   TELAS ULTRA-LARGAS
+   ================================ */
+
+@media (min-width: 1200px) {
+    .app-container {
+        max-width: 1400px;
+        grid-template-columns: 1fr 1.8fr;
+        gap: var(--espacamento-xl);
+    }
+
+    .task-form {
+        top: 120px;
+    }
+}

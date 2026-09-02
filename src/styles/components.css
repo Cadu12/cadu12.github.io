@@ -1,0 +1,626 @@
+/**
+ * ESTILOS DOS COMPONENTES
+ * Estilos específicos para cada componente da aplicação
+ */
+
+/* ================================
+   LAYOUT PRINCIPAL (APP)
+   ================================ */
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-fundo);
+}
+
+.app-header {
+    background-color: var(--cor-primary);
+    color: white;
+    padding: var(--espacamento-lg);
+    box-shadow: var(--sombra-media);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-conteudo {
+    flex: 1;
+}
+
+.app-titulo {
+    font-size: var(--tamanho-fonte-titulo);
+    margin: 0 0 var(--espacamento-xs) 0;
+    font-weight: 700;
+}
+
+.app-subtitulo {
+    margin: 0;
+    font-size: var(--tamanho-fonte-pequeno);
+    opacity: 0.9;
+}
+
+.app-main {
+    flex: 1;
+    padding: var(--espacamento-lg);
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--espacamento-lg);
+}
+
+.app-footer {
+    background-color: var(--cor-fundo-secundario);
+    padding: var(--espacamento-lg);
+    text-align: center;
+    border-top: 2px solid var(--cor-borda);
+    font-size: var(--tamanho-fonte-pequeno);
+    color: var(--cor-texto-secundario);
+}
+
+.footer-info {
+    margin-left: var(--espacamento-sm);
+    font-weight: 500;
+}
+
+/* ================================
+   FORMULÁRIO (TaskForm)
+   ================================ */
+
+.task-form {
+    background-color: var(--cor-fundo-secundario);
+    border-radius: var(--raio-grande);
+    box-shadow: var(--sombra-leve);
+    sticky: top 100px;
+}
+
+.form-container {
+    padding: var(--espacamento-lg);
+}
+
+.form-group {
+    margin-bottom: var(--espacamento-lg);
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--espacamento-sm);
+    font-size: var(--tamanho-fonte-grande);
+    color: var(--cor-texto-principal);
+}
+
+.form-input {
+    width: 100%;
+    padding: var(--espacamento-sm);
+    font-size: var(--tamanho-fonte-base);
+    border: 2px solid var(--cor-borda);
+    border-radius: var(--raio-medio);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    transition: border-color var(--duracao-transicao),
+        box-shadow var(--duracao-transicao);
+    font-family: inherit;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--cor-primary);
+    box-shadow: var(--sombra-focus);
+}
+
+.form-input:disabled {
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-texto-secundario);
+    cursor: not-allowed;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.char-count {
+    font-size: var(--tamanho-fonte-pequeno);
+    color: var(--cor-texto-secundario);
+    margin-top: var(--espacamento-xs);
+    text-align: right;
+}
+
+.form-buttons {
+    display: flex;
+    gap: var(--espacamento-sm);
+    flex-direction: column;
+}
+
+.erro-mensagem {
+    background-color: var(--cor-fundo-urgente);
+    color: var(--cor-urgente);
+    padding: var(--espacamento-md);
+    border-radius: var(--raio-medio);
+    border-left: 4px solid var(--cor-urgente);
+    display: flex;
+    align-items: center;
+    gap: var(--espacamento-sm);
+    margin-bottom: var(--espacamento-lg);
+    font-weight: 500;
+}
+
+.erro-icone {
+    font-size: var(--tamanho-fonte-grande);
+    flex-shrink: 0;
+}
+
+/* ================================
+   BOTÕES
+   ================================ */
+
+.btn {
+    padding: var(--espacamento-sm) var(--espacamento-md);
+    border: none;
+    border-radius: var(--raio-medio);
+    font-size: var(--tamanho-fonte-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--duracao-transicao);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espacamento-xs);
+    min-height: 44px;
+    min-width: 44px;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background-color: var(--cor-primary);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--cor-primary-hover);
+    box-shadow: var(--sombra-media);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn-secundario {
+    background-color: var(--cor-secondary);
+    color: white;
+}
+
+.btn-secundario:hover:not(:disabled) {
+    background-color: var(--cor-secondary-hover);
+    box-shadow: var(--sombra-media);
+    transform: translateY(-2px);
+}
+
+.btn-acao {
+    padding: var(--espacamento-xs) var(--espacamento-sm);
+    font-size: var(--tamanho-fonte-pequeno);
+    min-height: 40px;
+    flex: 1;
+}
+
+.btn-marcar {
+    background-color: var(--cor-success);
+    color: white;
+}
+
+.btn-marcar:hover:not(:disabled) {
+    background-color: var(--cor-success-hover);
+}
+
+.btn-desmarcar {
+    background-color: var(--cor-normal);
+    color: white;
+}
+
+.btn-desmarcar:hover:not(:disabled) {
+    background-color: var(--cor-texto-secundario);
+}
+
+.btn-editar {
+    background-color: var(--cor-primary);
+    color: white;
+}
+
+.btn-editar:hover:not(:disabled) {
+    background-color: var(--cor-primary-hover);
+}
+
+.btn-deletar {
+    background-color: var(--cor-danger);
+    color: white;
+}
+
+.btn-deletar:hover:not(:disabled) {
+    background-color: var(--cor-danger-hover);
+}
+
+.btn-filtro {
+    background-color: var(--cor-borda);
+    color: var(--cor-texto-principal);
+    flex: 1;
+    padding: var(--espacamento-sm) var(--espacamento-md);
+}
+
+.btn-filtro.ativo {
+    background-color: var(--cor-primary);
+    color: white;
+    box-shadow: var(--sombra-media);
+}
+
+.btn-filtro:hover:not(:disabled):not(.ativo) {
+    background-color: var(--cor-fundo-secundario);
+}
+
+.btn-tema {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    font-size: var(--tamanho-fonte-grande);
+}
+
+.btn-tema:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ================================
+   LISTA DE TAREFAS (TaskList)
+   ================================ */
+
+.task-list {
+    background-color: var(--cor-fundo-secundario);
+    border-radius: var(--raio-grande);
+    padding: var(--espacamento-lg);
+    box-shadow: var(--sombra-leve);
+}
+
+.task-list-header {
+    margin-bottom: var(--espacamento-lg);
+    padding-bottom: var(--espacamento-lg);
+    border-bottom: 2px solid var(--cor-borda);
+}
+
+.task-list-resumo {
+    margin-bottom: var(--espacamento-lg);
+}
+
+.titulo-secao {
+    font-size: var(--tamanho-fonte-grande);
+    margin-bottom: var(--espacamento-sm);
+}
+
+.resumo-tarefas {
+    color: var(--cor-texto-secundario);
+    font-size: var(--tamanho-fonte-pequeno);
+    margin: 0;
+}
+
+.task-filtros {
+    display: flex;
+    gap: var(--espacamento-sm);
+    margin-bottom: var(--espacamento-lg);
+    flex-wrap: wrap;
+}
+
+.task-filtros .btn-filtro {
+    flex: 0 1 auto;
+    min-width: 120px;
+}
+
+.task-items-container {
+    min-height: 200px;
+}
+
+.task-list-itens {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-md);
+    list-style: none;
+}
+
+.task-vazio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--espacamento-xl);
+    text-align: center;
+    color: var(--cor-texto-secundario);
+}
+
+.vazio-icone {
+    font-size: 3rem;
+    margin-bottom: var(--espacamento-md);
+}
+
+.vazio-mensagem {
+    font-size: var(--tamanho-fonte-base);
+    margin: 0;
+}
+
+/* ================================
+   ITEM DA TAREFA (TaskItem)
+   ================================ */
+
+.task-item {
+    background-color: var(--cor-fundo);
+    border-left: 4px solid var(--cor-borda);
+    border-radius: var(--raio-medio);
+    padding: var(--espacamento-md);
+    display: flex;
+    gap: var(--espacamento-md);
+    box-shadow: var(--sombra-leve);
+    transition: all var(--duracao-transicao);
+    position: relative;
+    overflow: hidden;
+}
+
+.task-item:hover {
+    box-shadow: var(--sombra-media);
+    transform: translateY(-2px);
+}
+
+/* Status CSS Classes */
+.task-item.status-concluida {
+    border-left-color: var(--cor-concluida);
+    background-color: var(--cor-fundo-concluida);
+}
+
+.task-item.status-proxima {
+    border-left-color: var(--cor-proxima);
+    background-color: var(--cor-fundo-proxima);
+}
+
+.task-item.status-urgente {
+    border-left-color: var(--cor-urgente);
+    background-color: var(--cor-fundo-urgente);
+}
+
+.task-item.status-normal {
+    border-left-color: var(--cor-normal);
+}
+
+/* Completada */
+.task-item.completada {
+    opacity: 0.8;
+}
+
+.task-item.completada .task-titulo {
+    text-decoration: line-through;
+    color: var(--cor-texto-secundario);
+}
+
+.task-status-indicador {
+    font-size: 2rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-conteudo {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-titulo {
+    font-size: var(--tamanho-fonte-base);
+    font-weight: 600;
+    margin: 0 0 var(--espacamento-xs) 0;
+    color: var(--cor-texto-principal);
+    word-break: break-word;
+}
+
+.task-descricao {
+    font-size: var(--tamanho-fonte-pequeno);
+    color: var(--cor-texto-secundario);
+    margin: 0 0 var(--espacamento-xs) 0;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.task-data {
+    font-size: var(--tamanho-fonte-pequeno);
+    color: var(--cor-texto-secundario);
+    margin-top: var(--espacamento-xs);
+}
+
+.task-acoes {
+    display: flex;
+    gap: var(--espacamento-xs);
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+/**
+ * Animação de Alerta para Tarefas Urgentes
+ * Pulse suave e visual, sem som
+ */
+.task-alerta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(244, 67, 54, 0.1),
+            transparent);
+    animation: pulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* ================================
+   MODAL (TaskModal)
+   ================================ */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    animation: fadeIn var(--duracao-transicao);
+}
+
+.modal {
+    background-color: var(--cor-fundo);
+    border-radius: var(--raio-grande);
+    box-shadow: var(--sombra-forte);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideDown var(--duracao-transicao);
+    z-index: 1002;
+}
+
+.modal-container {
+    padding: var(--espacamento-lg);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--espacamento-lg);
+    padding-bottom: var(--espacamento-md);
+    border-bottom: 2px solid var(--cor-borda);
+}
+
+.modal-titulo {
+    margin: 0;
+    font-size: var(--tamanho-fonte-grande);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: var(--tamanho-fonte-grande);
+    cursor: pointer;
+    color: var(--cor-texto-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: var(--raio-medio);
+    transition: all var(--duracao-transicao);
+}
+
+.modal-close:hover {
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-texto-principal);
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-lg);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: var(--espacamento-sm);
+    flex-direction: column;
+}
+
+/* ================================
+   MODO ESCURO - AJUSTES ESPECÍFICOS
+   ================================ */
+
+html[data-tema='dark'] .app-header {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+html[data-tema='dark'] .btn-tema {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+html[data-tema='dark'] .btn-tema:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ================================
+   RESPONSIVIDADE BÁSICA
+   ================================ */
+
+@media (max-width: 768px) {
+    .app-container {
+        grid-template-columns: 1fr;
+    }
+
+    .task-form {
+        sticky: static;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: var(--espacamento-md);
+        align-items: flex-start;
+    }
+
+    .task-item {
+        flex-direction: column;
+    }
+
+    .task-acoes {
+        justify-content: stretch;
+        width: 100%;
+    }
+
+    .task-acoes .btn-acao {
+        flex: 1;
+    }
+
+    .task-filtros {
+        flex-direction: column;
+    }
+
+    .task-filtros .btn-filtro {
+        min-width: unset;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+}
